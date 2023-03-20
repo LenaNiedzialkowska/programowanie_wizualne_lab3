@@ -40,7 +40,6 @@
             this.labelSave = new System.Windows.Forms.Label();
             this.labelLoad = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,19 +144,11 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(30, 375);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 5;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelLoad);
             this.Controls.Add(this.labelSave);
             this.Controls.Add(this.labelRemove);
@@ -185,6 +176,5 @@
         private DataGridViewTextBoxColumn Gatunek;
         private DataGridViewTextBoxColumn Autor;
         private System.Windows.Forms.Timer timer1;
-        private TextBox textBox1;
     }
 }

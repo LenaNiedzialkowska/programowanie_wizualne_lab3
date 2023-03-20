@@ -12,7 +12,12 @@ namespace projektowanie_wizualne_lab3
 {
     public partial class Form2 : Form
     {
-        public static string value;
+        public static string publisher = "";
+        public static string genre = "";
+        public static string author = "";
+        public static string date_of_publish = "";
+        public static string title = "";
+        
         public Form2()
         {
             InitializeComponent();
@@ -51,7 +56,11 @@ namespace projektowanie_wizualne_lab3
 
         private void labelAccept_Click(object sender, EventArgs e)
         {
-            value = textBox1.Text;
+            publisher = textBox1.Text;
+            genre = textBox2.Text;
+            author = textBox3.Text;
+            date_of_publish = textBox4.Text;
+            title = textBox5.Text;
         }
 
         private void labelReturn_Click(object sender, EventArgs e)

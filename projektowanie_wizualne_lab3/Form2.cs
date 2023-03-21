@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace projektowanie_wizualne_lab3
 {
+    
     public partial class Form2 : Form
     {
+        Form1 form1;
         public static string publisher = "";
         public static string genre = "";
         public static string author = "";
         public static string date_of_publish = "";
         public static string title = "";
         
-        public Form2()
+        public Form2(Form1 newform)
         {
             InitializeComponent();
-            
+            this.form1 = newform;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -56,11 +58,14 @@ namespace projektowanie_wizualne_lab3
 
         private void labelAccept_Click(object sender, EventArgs e)
         {
-            publisher = textBox1.Text;
-            genre = textBox2.Text;
-            author = textBox3.Text;
-            date_of_publish = textBox4.Text;
-            title = textBox5.Text;
+            LoadedValues value = new LoadedValues();
+
+            value.publisher = textBox1.Text;
+            value.genre = textBox2.Text;
+            value.author = textBox3.Text;
+            value.date_of_publish = textBox4.Text;
+            value.title = textBox5.Text;
+            form1.AddLoadedRow(value.publisher, value.genre, value.author, value.date_of_publish, value.title);
         }
 
         private void labelReturn_Click(object sender, EventArgs e)

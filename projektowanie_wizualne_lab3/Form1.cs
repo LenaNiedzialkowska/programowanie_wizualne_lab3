@@ -8,7 +8,6 @@ namespace projektowanie_wizualne_lab3
         {
             InitializeComponent();
 
-            //do poprawienia, dodaje pusty wiersz co powoduje, ¿e w pliku zostaja puste miejsca 
             rowId = dataGridView1.Rows.Add();
 
             // Grab the new row!
@@ -17,7 +16,7 @@ namespace projektowanie_wizualne_lab3
             // Add the data
             row.Cells[0].Value = "";
 
-           dataGridView1.Rows.RemoveAt(0);// usuwa pierwszy wiersz, ktory pozostaje pusty
+           dataGridView1.Rows.RemoveAt(0);
         }
 
         private void Form1_Load(object sender, EventArgs e)

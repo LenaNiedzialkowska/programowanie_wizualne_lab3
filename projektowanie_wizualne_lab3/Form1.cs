@@ -1,12 +1,18 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using System.IO;
+
 namespace projektowanie_wizualne_lab3
 {
     public partial class Form1 : Form
     {
         DataGridViewRow row;
         int rowId;
+        string path;
         public Form1()
         {
             InitializeComponent();
+
+            path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\Output.csv";
 
             rowId = dataGridView1.Rows.Add();
 
@@ -37,7 +43,16 @@ namespace projektowanie_wizualne_lab3
 
         private void labelRemove_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            //dataGridView1.Rows.Clear();
+            if (dataGridView1 != null && dataGridView1.Rows.Count != 0)
+            {
+                int currentRow = dataGridView1.CurrentCell.RowIndex;
+                dataGridView1.Rows.RemoveAt(currentRow);
+            }
+            else
+            {
+                MessageBox.Show("Brak pozycji do usuniecia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void labelSave_Click(object sender, EventArgs e)
@@ -102,7 +117,7 @@ namespace projektowanie_wizualne_lab3
 
         void readFromCSVFile()
         {
-            var lines = File.ReadAllLines(@"C:\Users\lenan\OneDrive\Pulpit\VS2022\projektowanie_wizualne_lab3\projektowanie_wizualne_lab3\bin\Debug\net6.0-windows\Output.csv");
+            var lines = File.ReadAllLines(path);
             foreach (var line in lines)
             {
                 var values = line.Split(',');
